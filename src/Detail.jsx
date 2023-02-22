@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const Detail = () => {
+  console.log("testing console.,logs");
   let { id } = useParams();
   useEffect(() => {});
   return (
