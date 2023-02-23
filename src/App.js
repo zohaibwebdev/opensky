@@ -5,6 +5,7 @@ import Add from "./Add";
 import Update from "./Update";
 import { Routes, Route } from "react-router-dom";
 import Detail from "./Detail";
+import Delete from "./Delete";
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
         <Route path="/" element={<Content />} />
         <Route path="/add" element={<Add />} />
         <Route path="/update" element={<Update />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/detail/:did" element={<Detail />} />
+        <Route path="/delete/:did" element={<Delete />} />
+        <Route path="/update/:did" element={<Update />} />
       </Routes>
     </div>
   );

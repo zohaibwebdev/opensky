@@ -9,7 +9,6 @@ const Content = () => {
     async function getCon() {
       const { data, error } = await supabase.from("connections").select("*");
       setCons(data);
-      console.log(cons);
     }
     getCon();
   }, []);
@@ -22,6 +21,7 @@ const Content = () => {
 
         {cons.map((con) => (
           <NavLink
+            key={con.id}
             to={`/detail/${con.id}`}
             className="bg-slate-700 rounded-xl text-indigo-100 flex justify-between align-middle p-2 text-lg mb-2"
             onClick={() => setVisible(!visible)}
@@ -32,16 +32,6 @@ const Content = () => {
             <h6>{con.mb}mb</h6>
           </NavLink>
         ))}
-        {/* <div
-        className="bg-slate-700 rounded-xl text-indigo-100 flex justify-between align-middle p-2 text-lg"
-        onClick={() => {
-          setVisible(!visible);
-        }}
-      >
-        <h6 className="text-lg font-mono">M Zohaib</h6>
-        <h6>6mb</h6>
-      </div>
-      <div>{visible ? <Detail cons={cons} /> : null}</div> */}
       </div>
     </>
   );
