@@ -21,7 +21,7 @@ const Update = () => {
   }
   return (
     <>
-      <div className="w-full max-w-xs bg-white shadow-md rounded px-3 pt-6 pb-8 mb-4">
+      <div className="w-full  bg-white shadow-md rounded px-3 pt-6 pb-8 mb-4">
         <h1 className="text-slate-800 text-2xl text-center">Update Data</h1>
         <form action="" className="" onSubmit={updateHandler}>
           <div className="mb-4">

@@ -20,7 +20,7 @@ const Detail = () => {
   useEffect(() => {});
   return (
     <>
-      <div className="bg-slate-700 text-indigo-100 text-xl mt-1 rounded-lg p-2">
+      <div className="bg-zinc-50 text-zinc-900 text-xl mt-1 rounded-lg p-2">
         <h1>connection : {conId.mb}MB</h1>
         <h1>bill per month : RS. {conId.bill}</h1>
         <h1>Last paid : {conId.date}</h1>
