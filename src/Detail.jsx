@@ -5,7 +5,7 @@ import supabase from "./supabase";
 
 const Detail = () => {
   let { did } = useParams();
-  console.log(did);
+
   const [conId, setConId] = useState([]);
   useEffect(() => {
     async function getId() {
@@ -14,7 +14,6 @@ const Detail = () => {
         .select("*")
         .eq("id", did);
       setConId(data[0]);
-      console.log(conId);
     }
     getId();
   }, []);
@@ -28,13 +27,13 @@ const Detail = () => {
         <h1>Remaining bill : RS.{conId.remaining}</h1>
         <div className="flex justify-around my-2">
           <NavLink
-            to={"/update"}
+            to={`/update/${did}`}
             className="bg-green-500 hover:bg-green-800 text-white font-semibold hover:text-white py-2 px-4  rounded"
           >
             update
           </NavLink>
           <NavLink
-            to={"/delete"}
+            to={`/delete/${did}`}
             className="bg-red-500 hover:bg-red-800 text-white font-semibold hover:text-white py-2 px-4  rounded"
           >
             delete
