@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import supabase from "./supabase";
 
 const Login = ({ setLogin }) => {
-  const [ruser, setRuser] = useState([]);
-
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
 
   async function loginHandler(e) {
     e.preventDefault();
     let { data: users, error } = await supabase.from("users").select("*");
-    if (name == users[0].name && pass == users[0].pass) {
+    if (name === users[0].name && pass === users[0].pass) {
       setLogin(true);
     } else {
       alert("something wrong");
     }
+
     setName("");
     setPass("");
   }
@@ -49,7 +48,7 @@ const Login = ({ setLogin }) => {
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="mb"
-              type="text"
+              type="password"
               value={pass}
               onChange={(e) => setPass(e.target.value)}
               placeholder="Password : "
